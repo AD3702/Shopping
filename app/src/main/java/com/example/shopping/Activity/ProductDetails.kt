@@ -45,7 +45,6 @@ class ProductDetails : AppCompatActivity() {
         wishList = findViewById(R.id.wishlist_product_details)
         wishList.setOnClickListener {
             var intentPut = Intent(this@ProductDetails, WishListActivity::class.java)
-            Log.e("getWishList", intent.getStringExtra("gender").toString())
             intentPut.putExtra("gender", intent.getStringExtra("gender").toString())
             intentPut.putExtra("articleType", intent.getStringExtra("articleType").toString())
             intentPut.putExtra("imageType", intent.getStringExtra("imageType").toString())
@@ -293,12 +292,6 @@ class ProductDetails : AppCompatActivity() {
                             }
                             innerLoop++
                         }
-                        Log.e(
-                            "getWishList",
-                            productDetailsArrayList[innerLoop].getId().toString() + "-" +
-                                    wishListArrayList[loop].getWishListProductId()
-                                        .toString()
-                        )
                         loop++
                     }
                     var productDetailsAdapter =

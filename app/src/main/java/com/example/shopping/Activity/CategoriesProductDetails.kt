@@ -126,67 +126,7 @@ class CategoriesProductDetails : AppCompatActivity() {
         })
     }
 
-//    private fun setItemsData() {
-//        articleTypeArrayListTemp = ArrayList()
-//        for (i in 0..10) {
-//            articleTypeArrayListTemp.add(articleTypeArrayList[i])
-//        }
-//    }
-//
-//    private fun setAdapter() {
-//        productDetailsAdapter = ProductDetailsAdapter(this, articleTypeArrayList)
-//        productDetailsAdapter.notifyDataSetChanged()
-//        subCategoryRecyclerProductDetails.adapter = productDetailsAdapter
-//    }
-//
-//    private fun setRVLayoutManager() {
-//        mLayoutManager = LinearLayoutManager(this)
-//        subCategoryRecyclerProductDetails.layoutManager = mLayoutManager
-//        subCategoryRecyclerProductDetails.setHasFixedSize(true)
-//    }
-//
-//    private fun setRVScrollListener() {
-//        mLayoutManager = LinearLayoutManager(this)
-//        scrollListener = RecyclerViewLoadMoreScroll(mLayoutManager as LinearLayoutManager)
-//        scrollListener.setOnLoadMoreListener(object :
-//            OnLoadMoreListener {
-//            override fun onLoadMore() {
-//                LoadMoreData()
-//            }
-//        })
-//        subCategoryRecyclerProductDetails.addOnScrollListener(scrollListener)
-//    }
-//
-//    private fun LoadMoreData() {
-//        productDetailsAdapter.addLoadingView()
-//        loadMoreItemsCells = ArrayList()
-//        val start = productDetailsAdapter.itemCount
-//        val end = start + 16
-//
-//        Handler().postDelayed({
-//            for (i in start..end) {
-//
-//                loadMoreItemsCells.add(articleTypeArrayList[i])
-//            }
-//
-//            productDetailsAdapter.removeLoadingView()
-//
-//            productDetailsAdapter.addData(loadMoreItemsCells)
-//
-//            scrollListener.setLoaded()
-//
-//            subCategoryRecyclerProductDetails.post {
-//                productDetailsAdapter.notifyDataSetChanged()
-//            }
-//        }, 3000)
-//
-//    }
-
     override fun onBackPressed() {
-//        var intent = Intent(this@CategoriesProductDetails, CategoriesActivity::class.java)
-//        Log.e("OnBackPressed", intentStr)
-//        intent.putExtra("category", intentStr)
-//        startActivity(intent)
         finish()
     }
 
