@@ -59,7 +59,7 @@ class WishListActivity : AppCompatActivity() {
             }
         }
         var callList: Call<Products?>? =
-            APIInterface.createLocal().getWishList("getWishList", "1")
+            APIInterface.createLocal().getWishList("getWishListDesc", "1")
         callList!!.enqueue(object : Callback<Products?> {
             override fun onResponse(call: Call<Products?>, response: Response<Products?>) {
                 try {

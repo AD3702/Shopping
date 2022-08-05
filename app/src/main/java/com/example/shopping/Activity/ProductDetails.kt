@@ -1,5 +1,6 @@
 package com.example.shopping.Activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -267,18 +268,26 @@ class ProductDetails : AppCompatActivity() {
         var callList: Call<Products?>? =
             APIInterface.createLocal().getWishList("getWishList", "1")
         callList!!.enqueue(object : Callback<Products?> {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(call: Call<Products?>, response: Response<Products?>) {
                 try {
                     wishListArrayList =
                         response.body()!!.getProductData() as ArrayList<ProductDatum>
                     var loop: Int = 0
                     var innerLoop: Int = 0
-//                    Log.e("getWishList", wishListArrayList.size.toString())
                     while (loop < wishListArrayList.size) {
                         while (innerLoop < productDetailsArrayList.size) {
                             if (productDetailsArrayList[innerLoop].getId()
                                     .equals(wishListArrayList[loop].getWishListProductId())
                             ) {
+                                Log.e(
+                                    "getWishList",
+                                    productDetailsArrayList.size.toString() + "-" + wishListArrayList.size.toString()
+                                )
+                                Log.e(
+                                    "getWishList",
+                                    "$loop-$innerLoop"
+                                )
                                 productDetailsArrayList[innerLoop].setAddedToWishList(true)
                                 break
                             }
@@ -299,6 +308,8 @@ class ProductDetails : AppCompatActivity() {
                         )
                     productRecyclerView.layoutManager =
                         LinearLayoutManager(this@ProductDetails)
+//                    productRecyclerView.isNestedScrollingEnabled = false
+                    productDetailsAdapter.notifyDataSetChanged()
                     productRecyclerView.adapter = productDetailsAdapter
                 } catch (e: Exception) {
                     Log.e("getWishList", e.toString())
@@ -309,6 +320,7 @@ class ProductDetails : AppCompatActivity() {
                         )
                     productRecyclerView.layoutManager =
                         LinearLayoutManager(this@ProductDetails)
+                    productDetailsAdapter.notifyDataSetChanged()
                     productRecyclerView.adapter = productDetailsAdapter
                 }
             }

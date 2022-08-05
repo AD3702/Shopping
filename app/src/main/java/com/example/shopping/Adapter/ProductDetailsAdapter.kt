@@ -47,6 +47,7 @@ class ProductDetailsAdapter(
     init {
         this.context = context
         this.productsArrayList = productsArrayList
+//        setHasStableIds(true)
     }
 
     override fun onCreateViewHolder(
@@ -107,10 +108,11 @@ class ProductDetailsAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         var productDatum: ProductDatum = productsArrayList[position]
         viewHolder = holder
         contextApp = context
-
+        holder.setIsRecyclable(false)
 //        Log.e("getWishList", productDatum.getAddedToWishList().toString())
 
         if (productDatum.getAddedToWishList() == true) {
