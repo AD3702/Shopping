@@ -11,8 +11,8 @@ interface APIInterface {
     companion object {
 
 //        var LOCAL_URL = "http://172.20.10.4/shopping/"
-        var LOCAL_URL = "http://192.168.1.63/shopping/"
-//        var LOCAL_URL = "http://192.168.1.7/shopping/"
+//        var LOCAL_URL = "http://192.168.1.64/shopping/"
+        var LOCAL_URL = "http://192.168.1.4/shopping/"
 
         //        var LOCAL_URL = "https://shopperzproject.000webhostapp.com/shopperz/"
         var IMAGE_URL = "https://shopperz.kiraattechnology.com/"

@@ -17,6 +17,7 @@ import com.example.shopping.Database.APIInterface
 import com.example.shopping.Database.ProductDatum
 import com.example.shopping.Database.Products
 import com.example.shopping.R
+import com.google.android.material.card.MaterialCardView
 import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
@@ -49,7 +50,7 @@ class SubCategoryTopRow(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var textSubCategory: TextView
-        var cardSubCategory: CardView
+        var cardSubCategory: MaterialCardView
 
         init {
             textSubCategory = itemView.findViewById(R.id.text_sub_category)
